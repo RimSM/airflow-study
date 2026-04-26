@@ -6,4 +6,3 @@ elseif [$FRUIT == ORANGE];THEN
 else 
 		echo "others" 
 fi
-

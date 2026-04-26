@@ -18,13 +18,12 @@
 """
 Example Airflow DAG that shows the complex DAG structure.
 """
+from __future__ import annotations
 
 import pendulum
-import datetime
-from airflow import DAG 
 
-# 3.X 버전부터 바뀜.
 from airflow.providers.standard.operators.bash import BashOperator
+from airflow.sdk import DAG, chain
 
 with DAG(
     dag_id="dags_bash_operator",

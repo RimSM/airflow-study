@@ -22,7 +22,9 @@ Example Airflow DAG that shows the complex DAG structure.
 import pendulum
 import datetime
 from airflow import DAG 
-from airflow.operators import BashOperator
+
+# 3.X 버전부터 바뀜.
+from airflow.providers.standard.operators.bash import BashOperator
 
 with DAG(
     dag_id="dags_bash_operator",

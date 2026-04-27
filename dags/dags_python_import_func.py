@@ -11,4 +11,8 @@ with DAG(
     start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
-    
+    task_get_sftp = PythonOperator(
+        task_id = 'task_get_sftp',
+        python_callable=get_sftps
+    )
+    task_get_sftp

@@ -18,6 +18,7 @@ with DAG(
         fruit = ['APPLE','BANANA','ORANGE','AVOCADO']
         rand_int = random.randint(0,3)
         print(fruit[rand_int])
+        return
 
     py_t1 = PythonOperator(
         task_id = 'py_t1',

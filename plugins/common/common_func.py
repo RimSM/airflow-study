@@ -5,4 +5,14 @@ def regist(name, sex, *args):
     print(f'이름 : {name}')
     print(f'성별 : {sex}')
     print(f'기타옵션들 : {args}')
-    
+
+def regist2(name, sex, *args, **kargs):
+    print(f'이름 : {name}')
+    print(f'성별 : {sex}')
+    print(f'기타옵션들 : {args}')
+    email = kargs['email'] or None
+    phone = kargs['phone'] or None
+    if email:
+        print(email)
+    if phone:
+        print(phone)

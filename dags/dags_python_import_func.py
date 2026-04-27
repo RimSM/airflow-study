@@ -2,7 +2,7 @@ from airflow import DAG
 import pendulum
 import random
 from airflow.providers.standard.operators.python import PythonOperator
-from common.common_func import get_sftps
+from common.common_func import get_sftp
 
 
 with DAG(

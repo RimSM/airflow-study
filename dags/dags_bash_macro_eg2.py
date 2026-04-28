@@ -1,7 +1,6 @@
 from airflow import DAG
 import pendulum
 from airflow.providers.standard.operators.bash import BashOperator
-from dateutil import relativedelta
 
 with DAG(
     dag_id = 'dags_bash_macro_eg2', 

@@ -28,4 +28,4 @@ with DAG (
         value1 = ti.xcom_pull(key = 'result1', task_ids = 'python_xcom_push_task2')
         value2 = ti.xcom_pull(key = 'result2', task_ids = 'python_xcom_push_task1')
 
-    xcom_push1() >> xcom_push2() >> xcom_pull 
+    xcom_push1() >> xcom_push2() >> xcom_pull()

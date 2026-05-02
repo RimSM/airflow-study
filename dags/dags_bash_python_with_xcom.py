@@ -18,9 +18,9 @@ with DAG(
     bash_pull = BashOperator(
         task_id = 'bash_pull', 
         env={
-            'STATUS': '{{ti.xcom_pull(task_id = "python_pull"["status"]])}}',
-            'DATA' : '{{ti.xcom_pull(task_id = "python_pull"["data"]])}}',
-            'OPTION_CNT' : '{{ti.xcom_pull(task_id = "python_pull"["option_cnt"]])}}'
+            'STATUS': '{{ti.xcom_pull(task_id = "python_pull")["status"]}}',
+            'DATA' : '{{ti.xcom_pull(task_id = "python_pull")["data"]}}',
+            'OPTION_CNT' : '{{ti.xcom_pull(task_id = "python_pull")["option_cnt"]}}'
         },
         bash_command='echo $STATUS && echo $DATA && echo $OPTION_CNT'
     )
@@ -38,7 +38,7 @@ with DAG(
     def python_pull_xcom(**kwarg):
         ti = kwarg['ti']
         start_value = ti.xcom_pull(key='bash_pusheded')
-        retrun_value = ti.xcom_pull(task_id = 'bash_push')
+        retrun_value = ti.xcom_pull(task_ids = 'bash_push')
 
-        
+
     bash_push >> python_pull_xcom()

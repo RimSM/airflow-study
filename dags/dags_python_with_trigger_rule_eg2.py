@@ -44,4 +44,4 @@ with DAG(
         print('정상처리')
 
     
-    select_random >> [task_a, task_b(),task_c()] >> task_d()
+    select_random() >> [task_a, task_b(),task_c()] >> task_d()
